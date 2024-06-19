@@ -29,3 +29,12 @@
 > http://localhost:8080/api/user/page?page=1&size=10 <br>
 > Method: GET <br>
 > Parameters Page: page_number, size: page_size
+
+
+## Application Properties
+> Data Base *MySQL* <br>
+> Data Base Credentials <br>
+> DB_URL <br>
+> Db_USERNAME <br>
+> DB_PASSWORD
+> 

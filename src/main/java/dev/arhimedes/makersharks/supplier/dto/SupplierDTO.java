@@ -30,4 +30,8 @@ public record SupplierDTO(
     @JsonProperty("manufacturing_process")
     String process
 ) {
+    public SupplierDTO(Integer id, String company, String website, String location, BusinessNature nature, ManufacturingProcess process) {
+        this(id, company, website, location, nature.name(), process.name());
+    }
+
 }

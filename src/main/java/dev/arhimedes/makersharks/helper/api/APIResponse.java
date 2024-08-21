@@ -10,23 +10,23 @@ import java.time.LocalDateTime;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class APIResponse {
+public class APIResponse<T> {
     private String message;
-    private Object data;
+    private T data;
     @JsonProperty("time_stamp")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy hh:mm:ss")
     private LocalDateTime timeStamp;
 
 
-    public static APIResponse withMessage(String message){
-        return APIResponse.builder()
+    public static <T> APIResponse<T> withMessage(String message){
+        return APIResponse.<T>builder()
                 .message(message)
                 .timeStamp(LocalDateTime.now())
                 .build();
     }
 
-    public static APIResponse withBody(String message, Object data){
-        return APIResponse.builder()
+    public static <T> APIResponse<T> withBody(String message, T data){
+        return APIResponse.<T>builder()
                 .message(message)
                 .data(data)
                 .timeStamp(LocalDateTime.now())
